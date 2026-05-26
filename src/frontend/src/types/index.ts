@@ -12,3 +12,16 @@ export interface AddToCartRequest {
   productId: number;
   quantity: number;
 }
+
+export interface CartItem {
+  productId: number;
+  productName: string;
+  unitPrice: number;
+  quantity: number;
+  totalPrice: number;
+}
+
+export interface CartSummary {
+  items: CartItem[];
+  cartTotal: number;
+}

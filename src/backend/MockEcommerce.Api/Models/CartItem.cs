@@ -20,3 +20,9 @@ public class CartItem
     /// <summary>Computed total: <see cref="UnitPrice"/> × <see cref="Quantity"/>.</summary>
     public decimal TotalPrice => UnitPrice * Quantity;
 }
+
+/// <summary>Request body for PUT /api/cart/{productId}.</summary>
+public record UpdateCartRequest(int Quantity);
+
+/// <summary>Response wrapper for GET /api/cart.</summary>
+public record CartSummary(IEnumerable<CartItem> Items, decimal CartTotal);
